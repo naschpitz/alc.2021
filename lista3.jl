@@ -1,6 +1,91 @@
 using LinearAlgebra
 include("plots.jl")
 
+function idade_dos_amigos()     # Número 4 da Lista 3. (Fábio)
+    A = zeros(5, 5)
+    b = zeros(5)
+    e = 0
+    y = 1
+    p  = ["A", "B", "C", "D", "E"]
+
+    println("Idade dos amigos: Alberto, Bernardo, Carol, Denise e Ernestro...")
+
+    while e != InterruptException() && y != 0
+        p1 = ""
+        p2 = ""
+        op = ""
+        idade = nothing
+        println("SISTEMA SEM SOLUÇÃ0, POR ENQUANTO...")
+        println()
+
+        while e != InterruptException() && !(p1 in p)
+            print("[A]lberto, [B]ernardo, [C]arol, [D]enise, [E]rnestro tem... (Ctrl+C to exit): ")
+            try p1 = readline() catch e end
+        end
+        while e != InterruptException() && !(op in ["+", "-", "="])
+            print("[+] mais ... anos que ..., [-] menos ... anos que ..., [=] ... anos... (Ctrl+C to exit): ")
+            try op = readline() catch e end
+        end
+        if op == "+"
+            s = "a mais"
+        elseif op == "-"
+            s = "a menos"
+        else
+            s = "tem"
+        end
+        while e != InterruptException() && !(idade isa Int)
+            print("Quantos anos $s? (Ctrl+C to exit): ")
+            try idade = parse(Int, readline()) catch e end
+        end
+        while op != "=" && e != InterruptException() && !(p2 in p)
+            print("... $s que [A]lberto, [B]ernardo, [C]arol, [D]enise, [E]rnestro. (Ctrl+C to exit): ")
+            try p2 = readline() catch e end
+            p2 == p1 ? p2 = "" : nothing
+        end
+
+        i = findall(==(p1), p)[1]
+        A[i,i] = 1
+        if op != "="
+            j = findall(==(p2), p)[1]
+            if A[i,j] == 0
+                A[i,j] = -1
+                op == "-" ? idade = idade * -1 : nothing
+                b[i]  += idade
+            end
+
+            if A[j,j] == 0
+                A[j,j] = 1
+                A[j,i] = -1
+                b[j]   = idade * -1
+            end
+        else
+            A[i,:] = zeros(5) 
+            A[i,i] = 1
+            b[i]   = idade
+        end
+        
+        println()
+        for k in 1:5
+            println(A[k,:])
+        end
+        println()
+        println(b)
+
+        x = 0
+        y = 0
+        try x = A\b catch y end
+        if x != 0
+            println()
+            println("Idade dos amigos: ")
+            println("Alberto tem ", x[1], " anos")
+            println("Bernardo tem ", x[2], " anos")
+            println("Carol tem ", x[3], " anos")
+            println("Denise tem ", x[4], " anos")
+            println("Ernestro tem ", x[5], " anos")
+        end        
+    end
+end
+
 function lago_fabio(s, v)                                           # Número 8 da Lista 3. (Fábio)
     A = zeros(s*s, s*s)                                             # "v" é uma vetor de 4 posições, com as temperaturas das bordas
     b = zeros(s*s)                                                  # s -> parametro q informa a raiz da quantidade...
