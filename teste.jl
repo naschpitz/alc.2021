@@ -1,4 +1,5 @@
 include("lista2.jl")
+include("lista3.jl")
 
 # (Fábio) Testando a Função da Lista 2 Número 9:
 v1 = [5;5]
