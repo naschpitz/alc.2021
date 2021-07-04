@@ -1,5 +1,4 @@
 using LinearAlgebra
-include("plots.jl")
 
 function idade_dos_amigos()     # Número 4 da Lista 3. (Fábio)
     A = zeros(5, 5)
@@ -111,4 +110,73 @@ function lago_fabio(s, v)                                           # Número 8 
         end
     end
     return A\b                                                      # x = A\b
+end
+
+function interpolate(A, b)     # Número 8 da Lista 3 (Bruno)
+    m, n = size(A)
+
+    I = zeros(m*n, m*n)
+    
+    for i in 1:m*n
+        li = floor((i - 1) ÷ n)
+        ci = i - li * m - 1
+        
+        for j in 1:m*n
+            lj = floor((j - 1) ÷ n)
+            cj = j - lj * m - 1
+            
+            if i == j
+                I[i, j] = 4
+                
+            elseif (li == lj - 1 || li == lj + 1) && ci == cj 
+                I[i, j] = -1
+                
+            elseif (ci == cj - 1 || ci == cj + 1) && li == lj
+                I[i, j] = -1
+
+            else
+                I[i, j] = 0
+
+            end
+        end
+    end
+    
+    B = zeros(m*n)
+    
+    for i in 0:m-1
+        for j in 0:n-1
+            index = i*n + j + 1            
+    
+            if i == 0 && j == 0
+                B[index] = b[1] + b[2]
+                
+            elseif i == 0 && j == n - 1
+                B[index] = b[2] + b[3]
+                
+            elseif i == m - 1 && j == n - 1
+                B[index] = b[3] + b[4]
+                
+            elseif i == m - 1 && j == 0
+                B[index] = b[4] + b[1]
+                
+            elseif j == 0 && i > 0 && i < m - 1
+                B[index] = b[1]    
+                
+            elseif i == 0 && j > 0 && j < n - 1
+                B[index] = b[2]
+                
+            elseif j == n - 1 && i > 0 && i < m - 1
+                B[index] = b[3]    
+                
+            elseif i == m - 1 && j > 0 && j < n - 1
+                B[index] = b[4]
+                
+            else
+                B[index] = 0
+                
+            end
+        end
+    end
+
+    return I, B
 end
