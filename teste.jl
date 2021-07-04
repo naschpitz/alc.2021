@@ -1,4 +1,7 @@
+using LinearAlgebra
 using Base: func_for_method_checked
+
+include("lista1.jl")
 include("lista2.jl")
 include("lista3.jl")
 
@@ -15,7 +18,20 @@ include("lista3.jl")
 ################################################
 
 # (Fábio) Testando a Função da Lista 3 Número 4:
-idade_dos_amigos()
+#idade_dos_amigos()
+################################################
+
+################################################
+# (Bruno) Testando a Função da Lista 1 Número 2
+
+#Testando com valores B e C de questões anteriores.
+B = [1 3 5; 4 5 9; 3 5 8]
+C = [1 0 0 0 1; 0 1 0 0 10; 0 0 1 1000 0]
+
+E, F = getEF(B, C)
+
+println(B*C == E*F)
+
 ################################################
 
 ################################################
