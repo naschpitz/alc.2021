@@ -1,3 +1,4 @@
+using Plots: print
 using LinearAlgebra
 using Base: func_for_method_checked
 
@@ -33,6 +34,23 @@ E, F = getEF(B, C)
 println(B*C == E*F)
 
 ################################################
+
+################################################
+# (Bruno) Testando a Função da Lista 1 Número 3
+
+V = [1 1 11 01 11 2 13 2; 1 2 12 102 21 3 10 2; 1 3 13 103 31 4 7 2; 1 4 14 104 41 5 4 3]
+
+B = getBase(V)
+
+println(B)
+
+anotherB = getAnotherBase(B)
+
+println(anotherB)
+
+################################################
+
+
 
 ################################################
 # (Bruno) Testando a Função da Lista 3 Número 8:
