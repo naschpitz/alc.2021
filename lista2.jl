@@ -28,3 +28,20 @@ function produtoInterno_Angulo(v, u)                                        # NÃ
         end
     end
 end
+
+function GS(V)
+    m,n = size(V)
+    U = zeros(m,n)
+    
+    for i in 1:m
+        sumProj = zeros(m)
+        
+        for j in 1:i-1
+            sumProj += (dot(V[:,i], U[:,j])/dot(U[:,j], U[:,j])) * U[:,j] 
+        end
+        
+        U[:,i] = V[:,i] - sumProj
+    end
+    
+    return U
+end

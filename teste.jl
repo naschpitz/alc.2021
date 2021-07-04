@@ -50,7 +50,13 @@ println(anotherB)
 
 ################################################
 
+# (Bruno) Testando a Função da Lista 2 Número 6
 
+V = [3 2; 1 2]
+
+R = GS(V)
+
+println(R)
 
 ################################################
 # (Bruno) Testando a Função da Lista 3 Número 8:
