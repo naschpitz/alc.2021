@@ -6,6 +6,7 @@ include("lista1.jl")
 include("lista2.jl")
 include("lista3.jl")
 include("lista4.jl")
+include("lista5.jl")
 
 # (Fábio) Testando a Função da Lista 2 Número 9:
 # v1 = [5;5]
@@ -83,4 +84,17 @@ V = [1000 300 6000; 4 6 11]
 a = minQuad_retaH(V)
 
 println(a)
+################################################
+
+################################################
+# (Bruno) Testando a Função da Lista 5 Número 5:
+#Teste com a matriz da letra "a"
+
+eigVecs = [1 1 -1; 0 1 2; -1 1 -1]
+eigVals = [1; -2; 2]
+
+M = getMatrix(eigVecs, eigVals)
+
+println(M)
+println(M * [-1; 2; -1])
 ################################################
