@@ -5,6 +5,7 @@ using Base: func_for_method_checked
 include("lista1.jl")
 include("lista2.jl")
 include("lista3.jl")
+include("lista4.jl")
 
 # (Fábio) Testando a Função da Lista 2 Número 9:
 # v1 = [5;5]
@@ -71,4 +72,15 @@ I, B = interpolate(A, b)
 
 println(I)
 println(B)
+################################################
+
+################################################
+# (Bruno) Testando a Função da Lista 4 Número 7:
+#Teste com a matriz da letra "a"
+
+V = [1000 300 6000; 4 6 11]
+
+a = minQuad_retaH(V)
+
+println(a)
 ################################################
