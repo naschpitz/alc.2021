@@ -48,3 +48,7 @@ function transformações_RPQ(M, T1, T2=nothing)                  # Número 2 da
         end
     end
 end
+
+function matriz_transformação(x, b) # Número 3 da Lista 5. (Fábio)
+    return b/x
+end
