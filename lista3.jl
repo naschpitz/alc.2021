@@ -85,6 +85,17 @@ function idade_dos_amigos()     # Número 4 da Lista 3. (Fábio)
     end
 end
 
+function transito(In_vals,Out_vals) # Funcao para solucionar a questão 6 para quaisquer valroes
+    if sum(In_vals) != sum(Out_vals)
+        "Total in In_vals and total in Out_vals must be equal"
+        return NaN
+    end
+    A = [1 0 0 1;0 1 1 0;0 0 1 1;1 1 0 0]
+    b = [sum(In_vals[1:2]);sum(In_vals[3:4]);sum(Out_vals[3:4]);sum(Out_vals[1:2])]
+    x = pinv(transpose(A)*A)*transpose(A)*b
+    return x
+end
+
 function lago_fabio(s, v)                                           # Número 8 da Lista 3. (Fábio)
     A = zeros(s*s, s*s)                                             # "v" é uma vetor de 4 posições, com as temperaturas das bordas
     b = zeros(s*s)                                                  # s -> parametro q informa a raiz da quantidade...
