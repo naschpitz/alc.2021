@@ -100,23 +100,22 @@ include("lista5.jl")
 ################################################
 
 # (Fábio) Testando a Função da Lista 5 Número 2:
-# r = [ 5, 5]         # Define r e s...
-# s = [-5, 5]         # ...estes devem ser ortogonais
-# Reflexo  = [-1  0;  # Define a matriz de transformação...
-#              0 -1]  # ...que causa reflexão
-# ProjOrto = [ 0  0;  # Define a matriz de transformação...
-#              0  0]  # ...projeção ortogonal
-# transformações_RPQ(1, 2, 3) -> sendo:
-# 1: Matriz formada por dois vetores (colunas) ortogonais
-# 2: Função que transforma o primeiro vetor
-# 3: (opcional) função que transforma o segundo vetor
-# transformações_RPQ([r s], Reflexo, ProjOrto)
+r = [ 5, 5]    # Define r e s...
+s = [-5, 5]    # ...estes devem ser ortogonais
+R = [-1  0;    # Define a matriz de transformação...
+      0  1]    # ...que causa a reflexão de r
+P = [ 1  0;    # Define a matriz de transformação...
+      0  0]    # ...da projeção ortogonal em r
+Q = [ 0  0;    # Define a matriz de transformação...
+      0  1]    # ...da projeção ortogonal em s
+T = R*P
+transformações_RPQ([r s], T)
 ################################################
 
 # (Fábio) Testando a Função da Lista 5 Número 3:
-paralelogramo = [0 2 2 4;
-                 0 0 1 1]
-quadrado      = [0 1 0 1;
-                 0 0 1 1]
-print(matriz_transformação(paralelogramo, quadrado))
+# paralelogramo = [0 2 2 4;
+#                  0 0 1 1]
+# quadrado      = [0 1 0 1;
+#                  0 0 1 1]
+# print(matriz_transformação(paralelogramo, quadrado))
 ################################################
