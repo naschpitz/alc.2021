@@ -20,8 +20,8 @@ function transformações_RPQ(M, T)                           # Número 2 da Lis
     if dot(M[:,1], M[:,2]) > 1e-8                           # Verifica se são ortogonais...
         println("Vetores não são ortogonais!!!")            # ...Senão for, imprime mensagem de erro e termina
     else                                                    # ...Se for continua...
-        A   = M * T                                          # Aplica a transformação na matriz
-        vel = 0.02*(M-A)                                  # Calibra velocidade da animação
+        A   = M * T                                         # Aplica a transformação na matriz
+        vel = 0.02*(M-A)                                    # Calibra velocidade da animação
         
         @gif for i in 1:51                                  # Anima a transformação...
             plano_cartesiano(M)
