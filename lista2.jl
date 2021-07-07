@@ -1,5 +1,53 @@
 using LinearAlgebra
+using Plots
 include("plots.jl")
+
+function uvw(M) # funcao que printa baseada na questao 8 da lista 2. w e verde, v e azul, u e vermelho, r e marrom e a soma e printada
+    l, c = size(M)
+    if l != 2
+        println("Plano Cartesiano deve morar em R2! ;-)")
+    elseif c != 2
+        println("A matriz deve ter dois vetores de entrada.")
+    else
+        x = [zeros(21) Vector(-10:10)]
+        y = [Vector(-10:10) zeros(21)]
+        linecolor=[:black :black]
+        lw = [1 1]
+        x = [x zeros(21)]
+        x[1,3] = M[1,1]
+        y = [y zeros(21)]
+        y[1,3] = M[2,1]
+        linecolor=[linecolor :green]
+        lw = [lw 3]
+        x = [x zeros(21)]
+        x[1,4] = M[1,2]
+        y = [y zeros(21)]
+        y[1,4] = M[2,2]
+        linecolor=[linecolor :blue]
+        lw = [lw 3]
+        w = M[:,1]
+        v = M[:,2]
+        u = ((transpose(w)*v)/(transpose(v)*v))*v
+        x = [x zeros(21)]
+        x[1,5] = u[1]
+        y = [y zeros(21)]
+        y[1,5] = u[2]
+        linecolor=[linecolor :red]
+        lw = [lw 2]
+        r = v-u
+        x = [x zeros(21)]
+        x[1,6] = r[1]
+        y = [y zeros(21)]
+        y[1,6] = r[2]
+        linecolor=[linecolor :brown]
+        lw = [lw 1]
+        s = (transpose(u)*u)+(transpose(r)*r)
+        println(s)
+        plot(x, y, xlims = (-10, 10), xticks = -10:1:10, ylims = (-10, 10), yticks = -10:1:10, leg=false, linecolor=linecolor, lw=lw)
+        
+        
+    end
+end
 
 function produtoInterno_Angulo(v, u)                                        # Número 9 da Lista 2. (Fábio)
     if size(v)[1] != 2 || size(u)[1] != 2                                   # Para satisfazer a letra (c)...
@@ -45,3 +93,6 @@ function GS(V)
     
     return U
 end
+
+
+
