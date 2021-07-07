@@ -15,7 +15,7 @@ function produtoInterno_Angulo(v, u)                                        # N�
             angulo = rad / (pi / 180)                                       # Calcula o ângulo entre os vetores.
             
             plano_cartesiano([v1 v2])                                       # Desenha os vetores em um plano cartesiano.
-            annotate!(5, 10, text("Produto interno: $produtoInterno", 10))  # Imoprime o produto interno.
+            annotate!(5, 10, text("Produto interno: $produtoInterno", 10))  # Imprime o produto interno.
             if produtoInterno == 0                                          # Satisfaz a letra (b), informando que vetores com...
                 annotate!(5, 9, text("Vetores são ortogonais", 10))         # ...produto interno igual a 0 são ortogonais.
             end

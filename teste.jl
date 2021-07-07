@@ -111,7 +111,6 @@ include("lista5.jl")
 # 2: Função que transforma o primeiro vetor
 # 3: (opcional) função que transforma o segundo vetor
 # transformações_RPQ([r s], Reflexo, ProjOrto)
-#idade_dos_amigos()
 ################################################
 
 # (Fábio) Testando a Função da Lista 5 Número 3:
