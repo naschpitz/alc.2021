@@ -23,3 +23,11 @@ function getAnotherBase(B)
 
     return newB
 end
+
+function geraMatriz(A) #funciona para qualquer matriz quadrada
+    m,n=size(A)
+    p=rank(A) #Posto de A a fim de garantir o menor p possível
+    B=rand(m,p)
+    C=B\A #Encontrar a matriz de coordenadas
+    return B, C
+end

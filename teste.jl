@@ -7,6 +7,7 @@ include("lista2.jl")
 include("lista3.jl")
 include("lista4.jl")
 include("lista5.jl")
+include("Comum.jl")
 
 # (Fábio) Testando a Função da Lista 2 Número 9:
 # v1 = [5;5]
@@ -109,7 +110,7 @@ P = [ 1  0;    # Define a matriz de transformação...
 Q = [ 0  0;    # Define a matriz de transformação...
       0  1]    # ...da projeção ortogonal em s
 T = R*P
-transformações_RPQ([r s], T)
+#transformações_RPQ([r s], T)
 ################################################
 
 # (Fábio) Testando a Função da Lista 5 Número 3:
@@ -118,4 +119,11 @@ transformações_RPQ([r s], T)
 # quadrado      = [0 1 0 1;
 #                  0 0 1 1]
 # print(matriz_transformação(paralelogramo, quadrado))
+################################################
+
+# (Roberta) Testando a Função da Lista 1 Número 1:
+A=rand(3,3)
+B, C=geraMatriz(A)
+PL=B*C
+calcNorm(A, PL)
 ################################################
