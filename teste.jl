@@ -151,11 +151,18 @@ T = R*P
 ################################################
 
 # (Roberta) Testando a Função da Lista 5 Número 3:
-P=[0 2 2 4; 0 0 1 1]
-Q=[0 1 0 1; 0 0 1 1]
-T=tranformaP(P,Q)
-PL=P*T
-calcNorm(Q,PL)
+#P=[0 2 2 4; 0 0 1 1]
+#Q=[0 1 0 1; 0 0 1 1]
+#T=tranformaP(P,Q)
+#PL=P*T
+#calcNorm(Q,PL)
+################################################
+
+# (Roberta) Testando a Função da Lista 5 Número 15:
+A=[cos(pi/6) -sin(pi/6); sin(pi/6) cos(pi/6)]
+B=[cos(pi/3) -sin(pi/3); sin(pi/3) cos(pi/3)]
+diagonal=[1 0; 0 1]
+R=prodRotação(A, B, diagonal)
 ################################################
 
 # (Fulaninho) Testando a Função da Lista X Número X:

@@ -63,3 +63,24 @@ end
 function tranformaP(P, Q) #Rebece as coordenadas do paralelogramo e do quadrado
     return P\Q
  end
+
+ function prodRotação(R1, R2, D) #Recebe 2 matrizes de rotação e uma de diagonalização
+    R=R1*R2 #Produto linear das matrizes de rotação
+    RD=R*D #Produto das matrizes de rotação mais a diagonalização
+    RDR=R1*D*R2 #Faz o SVD
+    
+    if RD==RDR #Compara o produto linear/SVD
+        println("AB é uma rotação!")
+        angulo=acos(R[1,1]) #retoma o ângulo cujo cosseno é número
+        angulo=(angulo/pi)*180 #regra de três
+        println("Cujo angulo de rotação é de $angulo graus")
+    else
+        println("AB não é uma matriz de rotação")
+    end
+    
+    if R1*R2==R2*R1 #Prova que as matrizes são de rotação e sua ordem não interfere no produto final
+        println("A ordem dos produtos lineares não são alterados na multiplicação (AB=BA)")
+    end
+        
+    #return R
+end
