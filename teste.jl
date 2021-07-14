@@ -8,6 +8,8 @@ include("lista3.jl")
 include("lista4.jl")
 include("lista5.jl")
 include("Comum.jl")
+include("jogo_vw.jl")
+include("melhores_coords.jl")
 
 # (Fábio) Testando a Função da Lista 2 Número 9:
 # v1 = [5;5]
@@ -159,10 +161,19 @@ T = R*P
 ################################################
 
 # (Roberta) Testando a Função da Lista 5 Número 15:
-A=[cos(pi/6) -sin(pi/6); sin(pi/6) cos(pi/6)]
-B=[cos(pi/3) -sin(pi/3); sin(pi/3) cos(pi/3)]
-diagonal=[1 0; 0 1]
-R=prodRotação(A, B, diagonal)
+#A=[cos(pi/6) -sin(pi/6); sin(pi/6) cos(pi/6)]
+#B=[cos(pi/3) -sin(pi/3); sin(pi/3) cos(pi/3)]
+#diagonal=[1 0; 0 1]
+#R=prodRotação(A, B, diagonal)
+################################################
+
+# (Fulaninho) Testando a Função da Lista X Número X:
+Aa=[0 1 3; 3 1 0]
+B, C, erro=jogo_vw(Aa)
+Ma=B*C'
+postoa=rank(Ma)
+print("Erro: $erro e Posto: $postoa \n")
+plano(Ma) #No Jupyter funcionou corretamente
 ################################################
 
 # (Fulaninho) Testando a Função da Lista X Número X:

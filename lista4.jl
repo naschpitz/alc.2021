@@ -1,6 +1,7 @@
 using LinearAlgebra
 using Images # read and show images, more info here: https://github.com/JuliaImages/Images.jl
 using JLD # used for File I/O, more info here: https://github.com/JuliaIO/JLD.jl
+using Plots
 
 function minQuad_retaH(V)
     m, n = size(V)
@@ -106,5 +107,17 @@ function bandeira_de_posto(posto) # Funcao para solucionar a questão 8 para qua
         return congo
     else
         return "O limite dessa função e 8."
+    end
+end
+
+function plano(M) #Recebe uma matriz
+    m,n=size(M)
+        
+    VImp=zeros(2,1)
+            
+    for i in 1:n
+        VImp=M[:,i]
+        println("$VImp")
+        plano_cartesiano(VImp') #Envia um vetor (2,1)
     end
 end
