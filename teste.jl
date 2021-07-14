@@ -122,8 +122,35 @@ T = R*P
 ################################################
 
 # (Roberta) Testando a Função da Lista 1 Número 1:
-A=rand(3,3)
-B, C=geraMatriz(A)
-PL=B*C
-calcNorm(A, PL)
+#A=rand(3,3)
+#B, C=geraMatriz(A)
+#PL=B*C
+#calcNorm(A, PL)
+################################################
+
+# (Roberta/Tainá) Testando a Função da Lista 3 Número 7:
+#Tomografia1=[1; 3; 2; 4; 2; 5] #Eq(6)<Var(9)=infinitas soluções
+#Corpo1=[1 1 0 1 0 0 0 0 0;
+#        0 0 1 0 1 1 0 1 0;
+#        0 0 0 0 0 0 1 0 1;
+#        0 0 1 1 0 0 1 0 0;
+#        0 1 0 0 1 1 0 0 0;
+#        1 0 0 0 0 0 0 1 1]
+#VD=CalcDefVari(Corpo1, Tomografia1)
+
+#Tomografia2=[1; 1; 2; 1; 2; 1; 2; 2] #Eq=Var (9) 
+#Corpo2=[0 1 0 0 0 0 0 0 0;
+#        0 0 0 0 1 0 0 0 0;
+#        0 0 0 0 0 0 1 0 1;
+#        0 0 0 0 0 0 1 0 0;
+#        0 1 0 0 1 0 0 0 0;
+#        0 0 0 0 0 0 0 0 1; #Inserimos as equações diagonais (3)
+#        0 0 0 0 1 0 0 0 1;
+#        0 0 0 0 1 0 1 0 0]
+#VD=CalcDefVari(Corpo2, Tomografia2)
+################################################
+
+
+# (Fulaninho) Testando a Função da Lista X Número X:
+#Seu Código Aqui
 ################################################

@@ -191,3 +191,13 @@ function interpolate(A, b)     # Número 8 da Lista 3 (Bruno)
 
     return I, B
 end
+
+function CalcInfVari(A, b) #Calculadora para Produto Linear com Infinitas Soluções
+    Vc=pinv(A)\b #Usando Pseudo Inversa
+    return Vc
+end
+
+function CalcDefVari(A, b) #Calculadora para Produto Linear com Valores Definidos de Variáveis
+    Vc= A\b
+    return Vc
+end
