@@ -150,6 +150,13 @@ T = R*P
 #VD=CalcDefVari(Corpo2, Tomografia2)
 ################################################
 
+# (Roberta) Testando a Função da Lista 5 Número 3:
+P=[0 2 2 4; 0 0 1 1]
+Q=[0 1 0 1; 0 0 1 1]
+T=tranformaP(P,Q)
+PL=P*T
+calcNorm(Q,PL)
+################################################
 
 # (Fulaninho) Testando a Função da Lista X Número X:
 #Seu Código Aqui

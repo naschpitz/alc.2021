@@ -59,3 +59,7 @@ function proj_reta(p1,p2) #Q16 - Funcao para obter a projecao sobre qualquer ret
     P = lambvecs*pinv(autovets)
     return P
 end
+
+function tranformaP(P, Q) #Rebece as coordenadas do paralelogramo e do quadrado
+    return P\Q
+ end
