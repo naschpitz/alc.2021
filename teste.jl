@@ -167,13 +167,13 @@ T = R*P
 #R=prodRotação(A, B, diagonal)
 ################################################
 
-# (Fulaninho) Testando a Função da Lista X Número X:
-Aa=[0 1 3; 3 1 0]
-B, C, erro=jogo_vw(Aa)
-Ma=B*C'
-postoa=rank(Ma)
-print("Erro: $erro e Posto: $postoa \n")
-plano(Ma) #No Jupyter funcionou corretamente
+# (Roberta) Testando a Função da Lista 4 Número 2:
+#Aa=[0 1 3; 3 1 0]
+#B, C, erro=jogo_vw(Aa)
+#Ma=B*C'
+#postoa=rank(Ma)
+#print("Erro: $erro e Posto: $postoa \n")
+#plano(Ma) #No Jupyter funcionou corretamente
 ################################################
 
 # (Fulaninho) Testando a Função da Lista X Número X:
